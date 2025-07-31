@@ -44,7 +44,7 @@ const Navbar = ({ toggleSidebar }) => {
     />
   </div>
 
-  {/* Language Selector */}
+  {/* Language Selectsadsador */}
   <div className="bg-white rounded-md p-1 shadow-sm border">
     <select
       onChange={handleLanguageChange}
@@ -55,12 +55,12 @@ const Navbar = ({ toggleSidebar }) => {
     </select>
   </div>
 
-  {/* Calculator */}
+  {/* Calculasdasdtor */}
   <div className="bg-white rounded-md p-2 hidden md:block shadow-sm border hover:bg-gray-100 cursor-pointer">
     <LiaCalculatorSolid title={t("calculator")} />
   </div>
 
-  {/* Message Icon */}
+  {/* Message Iasdsadcon */}
   <div className="relative bg-white rounded-md p-2 shadow-sm border hover:bg-gray-100 cursor-pointer">
     <FaEnvelope />
     <span className="absolute -top-1 -right-1 bg-red-500 text-white text-[10px] font-bold rounded-full px-1.5">+3</span>
