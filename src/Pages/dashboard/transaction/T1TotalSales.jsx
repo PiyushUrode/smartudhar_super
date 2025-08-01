@@ -160,24 +160,24 @@ const T1TotalSales = () => {
                 placeholder="Search date or revenue"
                 value={searchText}
                 onChange={(e) => setSearchText(e.target.value)}
-                className="pl-10 pr-3 py-2 border rounded-md text-sm w-full md:w-64 focus:outline-none focus:ring-2 focus:ring-bluecol"
+                className="pl-10 pr-3 py-2 border-2 rounded-md text-sm w-full md:w-64 bg-white focus:outline-none focus:ring-2 focus:ring-bluecol"
               />
               <Search className="absolute top-2 left-3 text-gray-400" size={16} />
             </div>
             <div className="flex gap-2">
               <input
-                type="number"
+                type="string"
                 placeholder="Min %"
                 value={minPct}
                 onChange={(e) => setMinPct(e.target.value)}
-                className="w-20 px-2 py-2 border rounded-md text-sm focus:outline-none"
+                className="w-20 px-2 py-2 bg-white  border-2 rounded-md text-sm focus:outline-none"
               />
               <input
-                type="number"
+                type="string"
                 placeholder="Max %"
                 value={maxPct}
                 onChange={(e) => setMaxPct(e.target.value)}
-                className="w-20 px-2 py-2 border rounded-md text-sm focus:outline-none"
+                className="w-20 px-2 py-2 border-2 bg-white rounded-md text-sm focus:outline-none"
               />
             </div>
             <div className="flex gap-2">
@@ -220,17 +220,17 @@ const T1TotalSales = () => {
                   type="date"
                   value={form.date}
                   onChange={(e) => setForm((f) => ({ ...f, date: e.target.value }))}
-                  className="w-full border rounded px-3 py-2 text-sm"
+                  className="w-full border-2 bg-white rounded px-3 py-2 text-sm"
                   required
                 />
               </div>
               <div>
                 <label className="text-xs font-medium text-gray-600">Revenue (₹)</label>
                 <input
-                  type="number"
+                  type="string"
                   value={form.revenue}
                   onChange={(e) => setForm((f) => ({ ...f, revenue: e.target.value }))}
-                  className="w-full border rounded px-3 py-2 text-sm"
+                  className="w-full border-2 bg-white rounded px-3 py-2 text-sm"
                   required
                 />
               </div>
@@ -239,10 +239,10 @@ const T1TotalSales = () => {
                   Percentage Change (auto if blank)
                 </label>
                 <input
-                  type="number"
+                  type="string"
                   value={form.pctChange}
                   onChange={(e) => setForm((f) => ({ ...f, pctChange: e.target.value }))}
-                  className="w-full border rounded px-3 py-2 text-sm"
+                  className="w-full border-2 bg-white rounded px-3 py-2 text-sm"
                   placeholder="Optional"
                   disabled={editingIdx === null ? false : false}
                 />

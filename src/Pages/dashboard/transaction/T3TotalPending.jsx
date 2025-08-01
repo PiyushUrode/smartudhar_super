@@ -52,59 +52,68 @@ const T3TotalPending = () => {
   };
 
   return (
-    <div className="p-6 bg-[#F5F7FA] min-h-screen font-interR">
+    <div className="p-4 w-full max-w-7xl mt-5 md:mt-10 mx-auto font-interR space-y-6">
       <div className="max-w-7xl mx-auto space-y-6">
         {/* Header */}
-        <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
-          <div>
-            <h1 className="text-2xl font-interSb bg-clip-text text-transparent bg-gradient-to-r from-bluecol to-purple-600 flex items-center gap-1">
-              <AlertCircle size={24} /> Total Pending History
-            </h1>
-            <p className="text-sm text-gray-600 mt-1">
-              Outstanding credits with overdue alerts. Search, filter, and manage entries below.
-            </p>
-          </div>
+        <div className="flex flex-col gap-4 md:flex-row items-center md:justify-between">
 
-          <div className="flex flex-wrap gap-2 items-center">
-            <div className="relative">
-              <input
-                placeholder="Search date or amount"
-                value={searchText}
-                onChange={(e) => setSearchText(e.target.value)}
-                className="pl-10 pr-3 py-2 border rounded-md text-sm w-full md:w-64 focus:outline-none focus:ring-2 focus:ring-bluecol"
-              />
-              <Search className="absolute top-2 left-3 text-gray-400" size={16} />
-            </div>
-            <select
-              value={overdueFilter}
-              onChange={(e) => setOverdueFilter(e.target.value)}
-              className="border px-3 py-2 rounded-md text-sm"
-            >
-              <option value="all">All Status</option>
-              <option value="yes">Overdue</option>
-              <option value="no">Not Overdue</option>
-            </select>
-            <div className="flex gap-2">
-              <CSVLink
-                data={filtered.map((r) => ({
-                  Date: dayjs(r.date).format('YYYY-MM-DD'),
-                  Amount: r.amount,
-                  Overdue: r.overdue ? 'Yes' : 'No',
-                }))}
-                filename="total-pending.csv"
-                className="flex items-center gap-1 bg-bluecol text-white px-4 py-2 rounded-md text-sm"
-              >
-                <Download size={16} /> Export CSV
-              </CSVLink>
-              <button className="flex items-center gap-1 border border-gray-300 px-4 py-2 rounded-md text-sm hover:bg-gray-100">
-                <Download size={16} /> PDF
-              </button>
-              <button className="flex items-center gap-1 border border-gray-300 px-4 py-2 rounded-md text-sm hover:bg-gray-100">
-                JSON
-              </button>
-            </div>
-          </div>
-        </div>
+  <div>
+    <h1 className="text-xl sm:text-2xl font-semibold bg-clip-text text-transparent bg-gradient-to-r from-bluecol to-purple-600">
+      Total Pending History
+    </h1>
+  </div>
+
+
+  <div className="flex flex-col sm:flex-row sm:flex-wrap xl:flex-nowrap gap-3     items-center w-full md:w-auto">
+
+    {/* Search Input */}
+    <div className="relative w-full sm:w-auto md:w-64">
+      <input
+        type="text"
+        placeholder="Search date or amount"
+        value={searchText}
+        onChange={(e) => setSearchText(e.target.value)}
+        className="w-full pl-10 pr-3 py-2 border-2 border-gray-300 bg-white rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-bluecol"
+      />
+      <Search className="absolute top-2.5 left-3 text-gray-400" size={16} />
+    </div>
+
+    {/* Dropdown Filter */}
+    <select
+      value={overdueFilter}
+      onChange={(e) => setOverdueFilter(e.target.value)}
+      className="w-full sm:w-auto border-2 bg-white border-gray-300  px-3 py-2 rounded-md text-sm focus:outline-none"
+    >
+      <option value="all">All Status</option>
+      <option value="yes">Overdue</option>
+      <option value="no">Not Overdue</option>
+    </select>
+
+    {/* Export Buttons */}
+    <div className="flex flex-wrap gap-2 w-full sm:w-auto">
+      <CSVLink
+        data={filtered.map((r) => ({
+          Date: dayjs(r.date).format('YYYY-MM-DD'),
+          Amount: r.amount,
+          Overdue: r.overdue ? 'Yes' : 'No',
+        }))}
+        filename="total-pending.csv"
+        className="flex items-center gap-1 bg-bluecol text-white px-4 py-2 rounded-md text-sm hover:bg-blue-700 transition"
+      >
+        <Download size={16} /> Export CSV
+      </CSVLink>
+
+      <button className="flex items-center gap-1 border border-gray-300 px-4 py-2 rounded-md text-sm hover:bg-gray-100 transition">
+        <Download size={16} /> PDF
+      </button>
+
+      <button className="flex items-center gap-1 border border-gray-300 px-4 py-2 rounded-md text-sm hover:bg-gray-100 transition">
+        JSON
+      </button>
+    </div>
+  </div>
+</div>
+
 
         {/* Summary */}
         <div className="bg-white rounded-xl shadow-customCard p-5 flex flex-col md:flex-row gap-6">

@@ -124,14 +124,12 @@ const T6TotalPackage = () => {
         <div className="flex flex-col lg:flex-row justify-between items-start gap-6">
           <div className="flex-1">
             <h1 className="text-3xl font-interSb text-gray-900 flex items-center gap-3">
-              <Box size={28} className="text-bluecol" />
+
               <span className="bg-clip-text text-transparent bg-gradient-to-r from-bluecol to-purple-600">
                 Total Package History
               </span>
             </h1>
-            <p className="mt-2 text-sm text-gray-600 max-w-prose">
-              Overview of product inventory over time with emphasis on low-stock alerts. Use filters to refine and export data for reporting or integration.
-            </p>
+
           </div>
 
           {/* Controls */}
@@ -142,7 +140,7 @@ const T6TotalPackage = () => {
                 placeholder="Search by date / count"
                 value={searchText}
                 onChange={(e) => setSearchText(e.target.value)}
-                className="w-full sm:w-64 pl-10 pr-4 py-2 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-bluecol shadow-sm"
+                className="w-full sm:w-64 pl-10 pr-4 py-2 border-2 bg-white border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-bluecol shadow-sm"
               />
               <Search className="absolute left-3 top-2.5 text-gray-400" size={16} />
             </div>

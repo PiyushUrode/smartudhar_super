@@ -45,6 +45,7 @@ const Navbar = ({ toggleSidebar }) => {
   </div>
 
   {/* Language Selectsadsador */}
+
   <div className="bg-white rounded-md p-1 shadow-sm border">
     <select
       onChange={handleLanguageChange}

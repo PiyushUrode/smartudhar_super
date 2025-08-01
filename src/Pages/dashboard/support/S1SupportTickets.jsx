@@ -73,7 +73,7 @@ const S1SupportTickets = () => {
   return (
     <div className="p-4 w-full max-w-7xl mt-5 md:mt-10 mx-auto font-interR space-y-6">
       {/* Header */}
-      <div className="flex justify-between items-center mb-4">
+      <div className="flex justify-between items-center  mb-4">
         <h1 className="text-xl font-interSb text-bluecol flex items-center gap-2">
           <HelpCircle size={20} /> Support Center
         </h1>

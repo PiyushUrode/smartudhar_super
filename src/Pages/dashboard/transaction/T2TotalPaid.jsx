@@ -150,14 +150,14 @@ const T2TotalPaid = () => {
                 placeholder="Search date, amount, method"
                 value={searchText}
                 onChange={(e) => setSearchText(e.target.value)}
-                className="pl-10 pr-3 py-2 border rounded-md text-sm w-full md:w-72 focus:outline-none focus:ring-2 focus:ring-bluecol"
+                className="pl-10 pr-3 py-2 border-2 bg-white  rounded-md text-sm w-full md:w-72 focus:outline-none focus:ring-2 focus:ring-bluecol"
               />
               <Search className="absolute top-2 left-3 text-gray-400" size={16} />
             </div>
             <select
               value={methodFilter}
               onChange={(e) => setMethodFilter(e.target.value)}
-              className="border px-3 py-2 rounded-md text-sm"
+              className="border-2 bg-white px-3 py-2 rounded-md text-sm"
             >
               <option value="">All Methods</option>
               {paymentMethods.map((m) => (

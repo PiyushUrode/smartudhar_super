@@ -122,11 +122,9 @@ const T5TotalInvoice = () => {
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
           <div>
             <h1 className="text-2xl font-interSb bg-clip-text text-transparent bg-gradient-to-r from-bluecol to-purple-600 flex items-center gap-2">
-              <Users2 size={24} /> Total Invoice History
+           Total Invoice History
             </h1>
-            <p className="text-sm text-gray-600 mt-1">
-              Customer counts and retention trends over time. Search, filter and manage records.
-            </p>
+
           </div>
           <div className="flex flex-wrap gap-2 items-center">
             <div className="relative">
@@ -134,7 +132,7 @@ const T5TotalInvoice = () => {
                 placeholder="Search date or count"
                 value={searchText}
                 onChange={(e) => setSearchText(e.target.value)}
-                className="pl-10 pr-3 py-2 border rounded-md text-sm w-full md:w-64 focus:outline-none focus:ring-2 focus:ring-bluecol"
+                className="pl-10 pr-3 py-2 border-2 bg-white rounded-md text-sm w-full md:w-64 focus:outline-none focus:ring-2 focus:ring-bluecol"
               />
               <Search className="absolute top-2 left-3 text-gray-400" size={16} />
             </div>
@@ -145,14 +143,14 @@ const T5TotalInvoice = () => {
                 placeholder="Min Retention %"
                 value={minRetention}
                 onChange={(e) => setMinRetention(e.target.value)}
-                className="w-28 px-2 py-2 border rounded-md text-sm focus:outline-none"
+                className="w-28 px-2 py-2 border-2 bg-white rounded-md text-sm focus:outline-none"
               />
               <input
                 type="number"
                 placeholder="Max Retention %"
                 value={maxRetention}
                 onChange={(e) => setMaxRetention(e.target.value)}
-                className="w-28 px-2 py-2 border rounded-md text-sm focus:outline-none"
+                className="w-28 px-2 py-2 border-2 bg-white rounded-md text-sm focus:outline-none"
               />
             </div>
 
